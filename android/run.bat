@@ -5,7 +5,7 @@ setlocal
 set ANDROID_SDK_ROOT=%AppData%\..\Local\Android\Sdk
 set adb="%ANDROID_SDK_ROOT%\platform-tools\adb.exe"
 set make="%ANDROID_SDK_ROOT%\ndk\21.1.6352462\prebuilt\windows-x86_64\bin\make.exe"
-set JAVA_HOME=C:\Program Files\Android\Android Studio\jre\jre
+set JAVA_HOME=C:\Program Files\Android\Android Studio\jre
 
 pushd %~dp0\..
 %make% -j %NUMBER_OF_PROCESSORS% debug

@@ -64,7 +64,7 @@ int main(int argc, char* argv[]) {
 
 	std::string defaultArgs("+set fs_basepath ");
 	defaultArgs += SDL_AndroidGetExternalStoragePath();
-	defaultArgs += " +set fs_game baseq3 +map q3dm6";
+	defaultArgs += " +set fs_game baseq3";
 
 	char* args = new char[defaultArgs.length() + 1];
 	args[defaultArgs.length()] = '\0';

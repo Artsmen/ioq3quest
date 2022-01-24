@@ -37,8 +37,8 @@ void VR_InitRenderer( engine_t* engine ) {
 
 	int eyeW, eyeH;
 
-	eyeW = 1440; // vrapi_GetSystemPropertyInt(&java, VRAPI_SYS_PROP_SUGGESTED_EYE_TEXTURE_WIDTH);
-	eyeH = 1600; // vrapi_GetSystemPropertyInt(&java, VRAPI_SYS_PROP_SUGGESTED_EYE_TEXTURE_HEIGHT);
+	eyeW = 1832; // vrapi_GetSystemPropertyInt(&java, VRAPI_SYS_PROP_SUGGESTED_EYE_TEXTURE_WIDTH);
+	eyeH = 1920; // vrapi_GetSystemPropertyInt(&java, VRAPI_SYS_PROP_SUGGESTED_EYE_TEXTURE_HEIGHT);
 	for (int eye = 0; eye < VRAPI_FRAME_LAYER_EYE_MAX; ++eye) {
 		framebuffer_t* framebuffer = &engine->framebuffers[eye];
 		framebuffer->colorTexture = vrapi_CreateTextureSwapChain3(VRAPI_TEXTURE_TYPE_2D, GL_RGBA8,

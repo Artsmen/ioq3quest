@@ -99,31 +99,35 @@ static void IN_VRTriggers( qboolean isRightController, float index ) {
 	}
 }
 
-static void IN_VRButtonsChanged( qboolean isRightController, uint32_t buttons )
-{
+static void IN_VRButtonsChanged(qboolean isRightController, uint32_t buttons) {
+
 	vrController_t* controller = isRightController == qtrue ? &rightController : &leftController;
 
 	if ((buttons & ovrButton_A) && !(controller->buttons & ovrButton_A)) {
 		Com_QueueEvent(in_vrEventTime, SE_KEY, K_PAD0_A, qtrue, 0, NULL);
-	} else if (!(buttons & ovrButton_A) && (controller->buttons & ovrButton_A)) {
+	}
+	else if (!(buttons & ovrButton_A) && (controller->buttons & ovrButton_A)) {
 		Com_QueueEvent(in_vrEventTime, SE_KEY, K_PAD0_A, qfalse, 0, NULL);
 	}
 
 	if ((buttons & ovrButton_B) && !(controller->buttons & ovrButton_B)) {
 		Com_QueueEvent(in_vrEventTime, SE_KEY, K_PAD0_B, qtrue, 0, NULL);
-	} else if (!(buttons & ovrButton_B) && (controller->buttons & ovrButton_B)) {
+	}
+	else if (!(buttons & ovrButton_B) && (controller->buttons & ovrButton_B)) {
 		Com_QueueEvent(in_vrEventTime, SE_KEY, K_PAD0_B, qfalse, 0, NULL);
 	}
 
-	if ((buttons & ovrButton_X) && !(controller->buttons & ovrButton_B)) {
+	if ((buttons & ovrButton_X) && !(controller->buttons & ovrButton_X)) {
 		Com_QueueEvent(in_vrEventTime, SE_KEY, K_PAD0_X, qtrue, 0, NULL);
-	} else if (!(buttons & ovrButton_B) && (controller->buttons & ovrButton_B)) {
+	}
+	else if (!(buttons & ovrButton_X) && (controller->buttons & ovrButton_X)) {
 		Com_QueueEvent(in_vrEventTime, SE_KEY, K_PAD0_X, qfalse, 0, NULL);
 	}
 
-	if ((buttons & ovrButton_Y) && !(controller->buttons & ovrButton_B)) {
+	if ((buttons & ovrButton_Y) && !(controller->buttons & ovrButton_Y)) {
 		Com_QueueEvent(in_vrEventTime, SE_KEY, K_PAD0_Y, qtrue, 0, NULL);
-	} else if (!(buttons & ovrButton_B) && (controller->buttons & ovrButton_B)) {
+	}
+	else if (!(buttons & ovrButton_Y) && (controller->buttons & ovrButton_Y)) {
 		Com_QueueEvent(in_vrEventTime, SE_KEY, K_PAD0_Y, qfalse, 0, NULL);
 	}
 
